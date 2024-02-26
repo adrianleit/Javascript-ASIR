@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array medias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        input,
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <h1>Arrays Javacript</h1>
+    <div>
+        Valor 1: <input type="text" placeholder="Introduce un numero" id="valor1">
+
+        <button type="button" onclick="sumar()">Añadir valor</button>
+        <button type="button" onclick="eliminar_uno()">Eliminar ultimo valor</button>
+        <button type="button" onclick="eliminar()">Eliminar todos los valores</button>
+        <br>
+
+        <p id="resultado"></p>
+        <p id="media"></p>
+    </div>
+</body>
+<script>
+    var numeros = [];
+
+    function media() {
+        var acumulado = 0;
+        for (let index = 0; index < numeros.length; index++) {
+            acumulado = acumulado + numeros[index];
+        }
+        acumulado = acumulado / numeros.length;
+        document.getElementById("media").innerHTML = "La media del total de los numeros es: " + acumulado;
+    }
+
+    function sumar() {
+        var valor1 = parseFloat(document.getElementById("valor1").value);
+        if (valor1 == null || valor1 == '' || isNaN(valor1)) {
+            alert('Falta el primer numero');
+        } else {
+            numeros.push(valor1);
+            document.getElementById("resultado").innerHTML = "Los numeros en el array son: "+numeros;
+            media();
+        }
+    }
+
+    function eliminar_uno() {
+        numeros.pop();
+        document.getElementById("resultado").innerHTML = "Los numeros en el array son: "+numeros;
+        media();
+    }
+
+    function eliminar() {
+        while (numeros.length > 0) {
+            numeros.pop();
+        }
+        if (numeros.length == 0) {
+            document.getElementById("resultado").innerHTML = "No hay ningun valor";
+            document.getElementById("media").innerHTML = "";
+        }
+    }
+</script>
+
+</html>
