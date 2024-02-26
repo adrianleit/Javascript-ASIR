@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Change Background Color Example</title>
+  <script>
+    let colorActual = "red";
+
+    function mifuncion() {
+      // Obtiene el elemento con el ID "body"
+      const elemento = document.getElementById("body");
+
+      // Cambia el color de fondo del elemento según el estado actual
+      if (colorActual === "red") {
+        elemento.style.backgroundColor = "green";
+        colorActual = "green";
+      } else if (colorActual === "green") {
+        elemento.style.backgroundColor = "blue";
+        colorActual = "blue";
+      } else if (colorActual === "blue") {
+        elemento.style.backgroundColor = "red";
+        colorActual = "red";
+      }
+    }
+
+
+  </script>
+</head>
+
+<body id="body">
+  <h1>Change Background Color Example</h1>
+  <p>
+    <label for="myButton">Button:</label>
+    <br>
+    <button id="myButton" onclick="mifuncion()">Haz click!</button>
+  </p>
+  <p>
+    <label>Result:</label>
+    <br>
+    <span id="result"></span>
+  </p>
+</body>
+
+</html>

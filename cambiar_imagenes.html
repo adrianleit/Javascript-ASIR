@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de imagenes con JS</title>
+    <style>
+        img {
+            max-width: 40%;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .fotos {
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+
+<body class="center">
+    <h1>Cambio de imagenes con JS</h1>
+	<h2>Fernando Alonso</h2>
+    <br>
+    <div class="fotos">
+        <p>
+            <img id="imagen" src="./img/foto_normal.jpg" alt="Fernando Alonso">
+        </p>
+    </div>
+
+    <p>
+        <button onclick="imagen_normal()">Pulsa Para Cambiar Imagen A Su Estado Original</button>
+        <button onclick="imagen_contento()">Pulsa ver al Nano Contento</button>
+        <button onclick="imagen_enfadado()">Pulsa ver al Nano Enfadado</button>
+    </p>
+</body>
+<script>
+    function imagen_normal() {
+        document.getElementById("imagen").src = "./img/foto_normal.jpg";
+    }
+    function imagen_contento() {
+        document.getElementById("imagen").src = "./img/foto_contento.jpg";
+    }
+    function imagen_enfadado() {
+        document.getElementById("imagen").src = "./img/foto_enfadado.jpg";
+    }
+</script>
+
+</html>
